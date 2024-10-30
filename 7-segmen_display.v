@@ -48,6 +48,14 @@ module segment_display(
         else
             counter <= counter + 1;
     end
+    always @(posedge clk_div[24] or posedge rst) begin
+        if (rst)
+            counter <= 4'b0000;
+        else if (counter == 4'b1001)
+            counter <= 4'b0000;
+        else
+            counter <= counter + 1;
+    end
 
     always @(counter) begin
         case (counter)
