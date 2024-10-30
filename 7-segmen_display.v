@@ -73,5 +73,17 @@ endmodule
     end
 
 endmodule
+Error (10028): Can't resolve multiple constant drivers for net "counter[3]" at counter.v(24)
+Error (10029): Constant driver at counter.v(18)
+Error (10028): Can't resolve multiple constant drivers for net "counter[2]" at counter.v(24)
+Error (10028): Can't resolve multiple constant drivers for net "counter[1]" at counter.v(24)
+Error (10028): Can't resolve multiple constant drivers for net "counter[0]" at counter.v(24)
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 6 errors, 4 warnings
+	Error: Peak virtual memory: 341 megabytes
+	Error: Processing ended: Wed Oct 30 08:47:22 2024
+	Error: Elapsed time: 00:00:02
+	Error: Total CPU time (on all processors): 00:00:00
+Error (293001): Quartus Prime Full Compilation was unsuccessful. 8 errors, 4 warnings
 
 */
