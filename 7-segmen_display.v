@@ -27,14 +27,14 @@ end
 endmodule
 
 
-/*
-module segment_display(
+/*module segment_display(
     input clk,
     input rst,
     output reg [6:0] seg,
     output [5:0] sel
 );
- reg [3:0] counter;
+
+    reg [3:0] counter;
     reg [24:0] clk_div;  // Clock divider register
     reg slow_clk;        // Slow clock signal
 
@@ -42,12 +42,11 @@ module segment_display(
 
     always @(posedge clk or posedge rst) begin
         if (rst)
-            counter <= 4'b0000;
-        else if (counter == 4'b1001)
-            counter <= 4'b0000;
+            clk_div <= 25'b0;
         else
-            counter <= counter + 1;
+            clk_div <= clk_div + 1;
     end
+
     always @(posedge clk_div[24] or posedge rst) begin
         if (rst)
             counter <= 4'b0000;
