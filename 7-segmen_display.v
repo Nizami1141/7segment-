@@ -34,8 +34,10 @@ module segment_display(
     output reg [6:0] seg,
     output [5:0] sel
 );
+ reg [3:0] counter;
+    reg [24:0] clk_div;  // Clock divider register
+    reg slow_clk;        // Slow clock signal
 
-    reg [3:0] counter;
     assign sel = 6'b011111; 
 
     always @(posedge clk or posedge rst) begin
