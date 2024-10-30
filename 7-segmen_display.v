@@ -28,26 +28,28 @@ endmodule
 
 
 /*
-  module segment_display(
+  module counter(
     input clk,
     input rst,
     output reg [6:0] seg,
     output [5:0] sel
 );
 
-    reg [25:0] clk_div;
+    reg [24:0] clk_div;
     reg [3:0] counter;
 
     assign sel = 6'b011111;
 
     always @(posedge clk or posedge rst) begin
         if (rst)
-            clk_div <= 26'b0;
+            clk_div <= 0;
         else
             clk_div <= clk_div + 1;
     end
+	 
+	 assign slow_clk = clk_div[24];
 
-    always @(posedge clk_div[25] or posedge rst) begin
+    always @(posedge clk_div[24] or posedge rst) begin
         if (rst)
             counter <= 4'b0000;
         else if (counter == 4'b1001)
@@ -73,5 +75,4 @@ endmodule
     end
 
 endmodule
-
 */
